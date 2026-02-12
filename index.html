@@ -3,30 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Піксельна Гонка</title>
+    <title>3D Гонка - Вид Ззаду</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="game-canvas">
-            <div class="road"></div>
-            <div class="road-line"></div>
-            <div class="player"></div>
-            <div class="info">
-                <div class="score">Очки: <span id="score">0</span></div>
-                <div class="speed">Швидкість: <span id="speed">0</span></div>
+    <canvas id="gameCanvas"></canvas>
+    
+    <div class="hud">
+        <div class="speedometer">
+            <div class="speed-value">
+                <span id="speed">0</span> км/ч
             </div>
-            <div class="controls">
-                ← → Стрілки для руху
-            </div>
-            <div class="game-over" id="gameOver">
-                <h1>ГОНКА ЗАКІНЧЕНА!</h1>
-                <p>Ваші очки: <span id="finalScore">0</span></p>
-                <p>Максимальна швидкість: <span id="maxSpeed">0</span></p>
-                <button onclick="location.reload()">Грати Знову</button>
+            <div class="speed-bar">
+                <div class="speed-fill" id="speedFill"></div>
             </div>
         </div>
+        
+        <div class="score-info">
+            <div>Очки: <span id="score">0</span></div>
+            <div>Відстань: <span id="distance">0</span>м</div>
+            <div>Рівень: <span id="level">1</span></div>
+        </div>
+        
+        <div class="controls-info">
+            ← → СТРІЛКИ ДЛЯ РУХУ | SPACE - БУСТ
+        </div>
     </div>
+    
+    <div class="game-over" id="gameOverScreen">
+        <div class="game-over-content">
+            <h1>🏁 ГОНКА ЗАКІНЧЕНА! 🏁</h1>
+            <p>Ваші очки: <span id="finalScore">0</span></p>
+            <p>Максимальна швидкість: <span id="maxSpeed">0</span> км/ч</p>
+            <p>Подолано: <span id="finalDistance">0</span>м</p>
+            <button onclick="location.reload()">Грати Знову</button>
+        </div>
+    </div>
+    
     <script src="game.js"></script>
 </body>
 </html>
